@@ -1,0 +1,24 @@
+<MyRoot>:
+
+    BoxLayout:
+        orientation: 'horizontal'
+        TextInput:
+            id          : text_box
+            text        : "Pswd"
+            font_size   : 10
+            multiline   : True
+            size_hint   : (1, 0.05)
+            
+        TextInput:
+            id          : delay_box
+            text        : "Delay"
+            font_size   : 10
+            multiline   : True
+            size_hint   : (0.3, 0.05)
+           
+        Button:
+            text        : "Go"
+            font_size   : 10
+            size_hint   : (0.2, 0.2)
+            on_press    : root.generate_number()
+            
