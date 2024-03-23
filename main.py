@@ -12,8 +12,9 @@ class Entity(object):
     def __init__(self):
         self._pos = (0, 0)
         self._size = (50, 50)
-        self._instruction = Rectangle(
-            pos=self._pos, size=self._size, source=self._source)
+        self._instruction = Rectangle(pos=self._pos, size=self._size)
+        """self._instruction = Rectangle(
+            pos=self._pos, size=self._size, source=self._source)"""
 
     @property
     def pos(self):
