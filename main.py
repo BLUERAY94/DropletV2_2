@@ -1,4 +1,3 @@
-
 import kivy
 from kivy.app import App
 from kivy.uix.widget import Widget
@@ -6,15 +5,15 @@ from kivy.graphics import Rectangle
 from kivy.core.window import Window
 from kivy.clock import Clock
 from kivy.uix.boxlayout import BoxLayout
+import time
 
 
 class Entity(object):
     def __init__(self):
         self._pos = (0, 0)
         self._size = (50, 50)
-        self._instruction = Rectangle(pos=self._pos, size=self._size)
-        """self._instruction = Rectangle(
-            pos=self._pos, size=self._size, source=self._source)"""
+        self._instruction = Rectangle(
+            pos=self._pos, size=self._size)
 
     @property
     def pos(self):
@@ -33,15 +32,6 @@ class Entity(object):
     def size(self, value):
         self._size = value
         self._instruction.size = self._size
-
-    @property
-    def source(self):
-        return self._source
-
-    @source.setter
-    def source(self, value):
-        self._source = value
-        self._instruction.source = self._source
 
 class RectClass(Entity):
         
@@ -77,12 +67,15 @@ class MyRoot(BoxLayout, Widget):
         self._entities = set()
 
         #self.canvas.opacity = 1
-        #self.canvas.clear()
-       
+        self.canvas.clear()
+        
         self.mycanvas_width         = Window.width
-        self.mycanvas_height        = Window.height *(1-0.05)
-        self.button_offset_height   = Window.height *(0.05)
+        self.mycanvas_height        = Window.height         #Window.height *(1-0.05)
+        self.button_offset_height   = 0                     #Window.height *(0.05)
         self.box_size               = (self.mycanvas_width/3, self.mycanvas_height/3)
+
+        time.sleep(1)
+
         self.event1 = Clock.schedule_interval(self._on_frame, self.delay)
         self.event2 = Clock.schedule_interval(self.add_rect, self.delay)
        
