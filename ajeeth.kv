@@ -5,20 +5,23 @@
         TextInput:
             id          : text_box
             text        : "Pswd"
-            font_size   : 10
+            font_size   : 25
             multiline   : True
-            size_hint   : (1, 0.05)
+            size_hint   : (1, 0.2)
+            pos_hint    : {'top':1}
             
         TextInput:
             id          : delay_box
             text        : "Delay"
-            font_size   : 10
+            font_size   : 25
             multiline   : True
-            size_hint   : (0.3, 0.05)
+            size_hint   : (0.3, 0.2)
+            pos_hint    : {'top':1}
            
         Button:
             text        : "Go"
-            font_size   : 10
+            font_size   : 25
             size_hint   : (0.2, 0.2)
             on_press    : root.generate_number()
+            pos_hint    : {'top':1}
             
