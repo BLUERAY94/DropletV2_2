@@ -1,7 +1,7 @@
 [app]
 
 # (str) Title of your application
-title = My Application
+title = Droplet
 
 # (str) Package name
 package.name = myapp
